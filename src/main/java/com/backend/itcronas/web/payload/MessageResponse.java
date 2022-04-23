@@ -1,4 +1,4 @@
-package com.backend.itcronas.model;
+package com.backend.itcronas.web.payload;
 
 import lombok.*;
 

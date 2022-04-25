@@ -8,10 +8,7 @@ import org.telegram.telegrambots.meta.api.objects.Update;
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 import java.util.List;
-
-// Аннотация @Component необходима, чтобы наш класс распознавался Spring, как полноправный Bean
 @Component
-// Наследуемся от TelegramLongPollingBot - абстрактного класса Telegram API
 public class Bot extends TelegramLongPollingBot {
     String botName = "itcronus_bot";
     String botToken = "5396770758:AAF_rmfXHbw8yn2R7FpiFyb-rkQNHHsWCmg";

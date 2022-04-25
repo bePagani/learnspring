@@ -1,5 +1,10 @@
 package com.backend.itcronas.web.payload;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public class TokenRefreshResponse {
     private String accessToken;
     private String refreshToken;

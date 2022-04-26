@@ -25,7 +25,7 @@ import java.text.MessageFormat;
 @RequestMapping("/api/bot")
 public class BotController {
     @PostMapping("/phone")
-    public HttpEntity<String> sendRequestPhone(@RequestBody BotMessage bot) throws UnsupportedEncodingException, JsonProcessingException {
+    public HttpEntity<String> sendRequestPhone(@RequestBody BotMessage bot) throws JsonProcessingException {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
@@ -35,8 +35,9 @@ public class BotController {
         botMessage.setChat_id("-1001673252630");
         ObjectMapper mapper = new ObjectMapper();
         String json = mapper.writeValueAsString(botMessage);
+        System.out.println(json);
         UriComponentsBuilder builder = UriComponentsBuilder.fromHttpUrl("https://api.telegram.org/bot5396770758:AAF_rmfXHbw8yn2R7FpiFyb-rkQNHHsWCmg/sendMessage");
-        HttpEntity<?> entity = new HttpEntity<>(botMessage, headers);
+        HttpEntity<?> entity = new HttpEntity<>(json, headers);
         HttpEntity<String> response = restTemplate.exchange(
                 builder.toUriString(),
                 HttpMethod.POST,

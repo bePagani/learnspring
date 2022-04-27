@@ -4,9 +4,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
-
 import javax.validation.Valid;
-
 import com.backend.itcronas.component.JwtUtils;
 import com.backend.itcronas.exception.TokenRefreshException;
 import com.backend.itcronas.model.ERole;
@@ -31,7 +29,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@CrossOrigin(origins = "*", maxAge = 3600)
+@CrossOrigin(origins = "http://192.168.1.2:8081", maxAge = 3600)
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
